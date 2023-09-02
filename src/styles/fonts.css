@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "Barlow";
+  font-weight: 400;
+  src: url("/public/fonts/Barlow_Condensed/BarlowCondensed-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Bellefair";
+  font-weight: 400;
+  src: url("/public/fonts/Bellefair/Bellefair-Regular.ttf") format("truetype");
+}

@@ -1,0 +1,217 @@
+/* Reset all margins and paddings */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 32px;
+  font-size: 18px;
+}
+
+/* Reset default list styles */
+ul, ol {
+  list-style: none;
+}
+
+li {
+  padding: 0;
+  margin: 0;
+}
+
+/* Reset default link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+/* Reset default button styles */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Add any additional reset styles here */
+@font-face {
+  font-family: "Barlow";
+  font-weight: 400;
+  src: url("/public/fonts/Barlow_Condensed/BarlowCondensed-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Bellefair";
+  font-weight: 400;
+  src: url("/public/fonts/Bellefair/Bellefair-Regular.ttf") format("truetype");
+}
+body {
+  font-family: Barlow, sans-serif;
+  background-color: #0B0D17;
+  color: #fff;
+}
+
+.home-page {
+  background: url("/public/assets/home/background-home-desktop.jpg");
+  background-size: cover;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Bellefair, sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+h1 {
+  font-size: 150px;
+}
+
+h2 {
+  font-size: 100px;
+}
+
+h3 {
+  font-size: 56px;
+}
+
+h4 {
+  font-size: 32px;
+}
+
+h5 {
+  font-size: 28px;
+  letter-spacing: 4.75px;
+  color: #D0D6F9;
+}
+
+.sub-h1 {
+  font-size: 28px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.sub-h2 {
+  font-size: 14px;
+  letter-spacing: 2.35px;
+  text-transform: uppercase;
+}
+
+.header {
+  margin-top: 40px;
+  width: 100%;
+  height: 96px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  padding-left: 55px;
+}
+.header__logo a {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  position: relative;
+}
+.nav::before {
+  content: "";
+  display: block;
+  width: 473px;
+  margin-left: 50px;
+  height: 1px;
+  opacity: 0.2515;
+  background: #FFF;
+  position: absolute;
+  left: -58%;
+  top: 50%;
+  z-index: 2;
+}
+
+.nav-menu {
+  background: rgba(255, 255, 255, 0.04);
+  -webkit-backdrop-filter: blur(40.7742271423px);
+          backdrop-filter: blur(40.7742271423px);
+  width: 830px;
+  height: 100%;
+  padding: 0px 167px 0px 123px;
+  display: flex;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  align-items: center;
+}
+
+.nav-text {
+  font-size: 16px;
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.nav__item {
+  padding: 30px 0;
+  border-bottom: 3px solid transparent;
+}
+
+.nav__item.active {
+  border-bottom: 3px solid #fff;
+}
+
+.nav__item:hover {
+  border-bottom: 3px solid rgba(255, 255, 255, 0.5021);
+}
+
+.container {
+  width: 100%;
+  padding: 0 165px;
+  margin: 0 auto;
+}
+
+.main {
+  margin-top: 251px;
+  width: 100%;
+}
+.main .main__content {
+  display: flex;
+  justify-content: space-between;
+}
+.main .main__content .content__text {
+  max-width: 450px;
+}
+.main .main__content .content__text h5 {
+  font-family: Barlow, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.main .main__content .content__text p {
+  font-size: 18px;
+  color: #D0D6F9;
+}
+.main .main__btn {
+  margin-top: 108px;
+  width: 274px;
+  height: 274px;
+  border-radius: 100%;
+  background-color: #fff;
+  color: #0B0D17;
+  font-family: Bellefair, sans-serif;
+  font-size: 32px;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.main .main__btn:hover {
+  box-shadow: 0px 0px 0 88px rgba(255, 255, 255, 0.1036);
+}
