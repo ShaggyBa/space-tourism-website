@@ -1,8 +1,8 @@
-@use 'reset.scss';
-@use 'fonts.scss';
+@use "reset.scss";
+@use "fonts.scss";
 
-$black: #0B0D17;
-$lightBlue: #D0D6F9;
+$black: #0b0d17;
+$lightBlue: #d0d6f9;
 $white: #fff;
 
 $desktop: 1440px;
@@ -18,25 +18,30 @@ body {
 }
 
 .home-page {
-	background-image: url('/public/assets/home/background-home-desktop.jpg');
-	background-size:cover;
+	background-image: url("/public/assets/home/background-home-desktop.jpg");
+	background-size: cover;
 	background-repeat: no-repeat;
 
 	@media screen and (max-width: $tablet) {
-		background-image: url('/public/assets/home/background-home-tablet.jpg');
-		background-size:cover;
+		background-image: url("/public/assets/home/background-home-tablet.jpg");
+		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: top;
 
-		overflow-y:visible;
+		overflow-y: visible;
 	}
 
 	@media screen and (max-width: $mobile) {
-		background-image: url('/public/assets/home/background-home-mobile.jpg');
+		background-image: url("/public/assets/home/background-home-mobile.jpg");
 	}
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-family: Bellefair, sans-serif;
 	text-transform: uppercase;
 	color: $white;
@@ -81,7 +86,7 @@ h5 {
 
 .header {
 	margin-top: 40px;
-	width: 100%;	
+	width: 100%;
 	height: 96px;
 
 	display: flex;
@@ -98,20 +103,18 @@ h5 {
 .header__logo {
 	margin-left: 55px;
 	& a {
-	display: flex;
-	align-items: center;
+		display: flex;
+		align-items: center;
 	}
 
 	@media screen and (max-width: $tablet) {
 		& {
 			margin-left: 39px;
 		}
-		
 	}
 }
 
 .nav {
-	
 	background: rgba(255, 255, 255, 0.04);
 	backdrop-filter: blur(40.774227142333984px);
 
@@ -122,23 +125,26 @@ h5 {
 	display: flex;
 	justify-content: center;
 
-	
-
 	@media screen and (max-width: $tablet) {
 		& {
 			max-width: 450px;
 		}
 	}
+
 	@media screen and (max-width: calc($mobile + 200px)) {
-		& {
+		.nav__burger {
+			position: absolute;
+			top: 0;
+			right: 30px;
 			margin-right: 39px;
 			max-width: 24px;
 			width: 24px;
 			height: 21px;
 			border-top: 3px solid $lightBlue;
 			cursor: pointer;
+
 			&::before {
-				content: '';
+				content: "";
 				position: absolute;
 				width: 24px;
 				height: 3px;
@@ -148,7 +154,7 @@ h5 {
 				z-index: 10;
 			}
 			&::after {
-				content: '';
+				content: "";
 				position: absolute;
 				width: 24px;
 				height: 3px;
@@ -161,42 +167,46 @@ h5 {
 		& > .nav__menu {
 			display: none;
 		}
-		&.active {
+		&.menu-open {
+			margin-left: 0;
+
 			position: fixed;
-			bottom: 0;
+			top: 0;
 			right: 0;
 			margin-right: 0;
 			border: none;
-			background: rgba(255, 255, 255, 0.04);
-			backdrop-filter: blur(40.774227142333984px);
-			width:100%;
 			max-width: 254px;
-			height: 100vh;
+			height: 100%;
 			z-index: 10;
+
+			.nav__burger {
+				top: 55px;
+				border: none;
+			}
+
+			.nav__burger::before {
+				rotate: -45deg;
+				top: 0;
+				width: 30px;
+			}
+
+			.nav__burger::after {
+				rotate: 45deg;
+				top: 0;
+				width: 30px;
+			}
 		}
 
-		&::before {
-			top: 33.85px;
-			right: 26.45px;
-			rotate: 45deg;
-		}
-
-		&::after {
-			top: 33.85px;
-			right: 26.45px;
-			rotate: -45deg;
-		}
-
-		&.active > .nav__menu {
+		&.menu-open > .nav__menu {
 			display: flex;
 			height: 100%;
 			width: 100%;
 			flex-direction: column;
-			justify-content:left;
+			justify-content: left;
 			align-items: start;
 			padding: 0;
 			margin: 118px 0 0 32px;
-			
+
 			& > .nav__item {
 				padding: 0;
 				margin-right: 0;
@@ -216,14 +226,11 @@ h5 {
 					border-bottom: none;
 					border-right: 3px solid $lightBlue;
 				}
-
 			}
 			& > .nav__item span {
 				display: inline;
 			}
-			
 		}
-		
 	}
 }
 
@@ -233,17 +240,17 @@ h5 {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	
+
 	position: relative;
 
 	&::before {
-		content: '';
+		content: "";
 		display: block;
 		width: 473px;
 		margin-left: 50px;
 		height: 1px;
 		opacity: 0.2515;
-		background: #FFF;
+		background: #fff;
 
 		position: absolute;
 		left: -100%;
@@ -256,9 +263,8 @@ h5 {
 		&::before {
 			display: none;
 		}
-		
 	}
- 
+
 	@media screen and (max-width: $tablet) {
 		& {
 			font-size: 14px;
@@ -272,14 +278,12 @@ h5 {
 	letter-spacing: 2.7px;
 	text-transform: uppercase;
 	white-space: nowrap;
-
 }
 
 .nav__item {
 	padding: 30px 0;
 	border-bottom: 3px solid transparent;
 	margin-right: 50px;
-
 
 	&:last-child {
 		margin-right: 0;
@@ -291,8 +295,7 @@ h5 {
 
 	@media screen and (max-width: $tablet) {
 		& {
-		margin-right: 37px;
-			
+			margin-right: 37px;
 		}
 		& span {
 			display: none;
@@ -325,7 +328,6 @@ h5 {
 	.main__content {
 		display: flex;
 		justify-content: space-between;
-		flex-wrap: wrap;
 		.content__text {
 			max-width: 450px;
 			margin-right: 30px;
@@ -347,15 +349,37 @@ h5 {
 				justify-content: center;
 				align-items: center;
 				text-align: center;
-			}
 
-			& .content__text {
-				margin-right: 0;
-				& p {
-					font-size: 16px;
-					line-height: 28px;
+				& .content__text {
+					width: 100%;
+					margin-right: 0;
+					& p {
+						font-size: 16px;
+						line-height: 28px;
+					}
 				}
-				
+			}
+		}
+		@media screen and (max-width: $mobile) {
+			& {
+				max-width: 327px;
+			}
+			& .content__text {
+				width: 100%;
+				& h5 {
+					font-size: 16px;
+					line-height: normal;
+					letter-spacing: 2.7px;
+				}
+				& h1 {
+					margin-top: 17px;
+					font-size: 100px;
+				}
+				& p {
+					font-size: 15px;
+					line-height: 25px;
+					margin-top: 17px;
+				}
 			}
 		}
 	}
@@ -369,7 +393,7 @@ h5 {
 
 		background-color: $white;
 		color: $black;
-		
+
 		font-family: Bellefair, sans-serif;
 		font-size: 32px;
 
@@ -390,12 +414,22 @@ h5 {
 				width: 242px;
 				height: 242px;
 			}
-			
+		}
+
+		@media screen and (max-width: $mobile) {
+			& {
+				margin-top: 81px;
+				width: 150px;
+				height: 150px;
+
+				font-size: 20px;
+				letter-spacing: 1.25px;
+			}
 		}
 	}
 
 	.main__btn:hover {
-		box-shadow: 0px 0px 0 88px rgba(255,255,255,0.1036);
+		box-shadow: 0px 0px 0 88px rgba(255, 255, 255, 0.1036);
 	}
 
 	@media screen and (max-width: calc($tablet + 300px)) {
