@@ -7,7 +7,7 @@ $white: #fff;
 
 $desktop: 1440px;
 $tablet: 768px;
-$mobile: 375px;
+$mobile: 475px;
 body {
 	font-family: Barlow, sans-serif;
 	background-color: $black;
@@ -112,6 +112,13 @@ h5 {
 			margin-left: 39px;
 		}
 	}
+
+	@media screen and (max-width: $mobile) {
+		& {
+			margin-left: 15px;
+		}
+		
+	}
 }
 
 .nav {
@@ -131,12 +138,11 @@ h5 {
 		}
 	}
 
-	@media screen and (max-width: calc($mobile + 200px)) {
+	@media screen and (max-width: $mobile) {
 		.nav__burger {
 			position: absolute;
 			top: 0;
 			right: 30px;
-			margin-right: 39px;
 			max-width: 24px;
 			width: 24px;
 			height: 21px;
@@ -231,6 +237,13 @@ h5 {
 				display: inline;
 			}
 		}
+	}
+
+	@media screen and (max-width: calc($mobile - 100px)) {
+		&.menu-open {
+			max-width: 180px;
+		}
+		
 	}
 }
 
@@ -361,9 +374,7 @@ h5 {
 			}
 		}
 		@media screen and (max-width: $mobile) {
-			& {
-				max-width: 327px;
-			}
+			
 			& .content__text {
 				width: 100%;
 				& h5 {
@@ -382,10 +393,15 @@ h5 {
 				}
 			}
 		}
+		@media screen and (max-width: calc($mobile - 100px)) {
+			& .content__text h1{
+				font-size: 80px;
+			}						
+		}
 	}
 
 	.main__btn {
-		margin-top: 108px;
+		margin: 108px 0 52px 0;
 
 		width: 274px;
 		height: 274px;
@@ -408,6 +424,10 @@ h5 {
 
 		transition: box-shadow 0.3s ease-in-out;
 
+		&:hover {
+			box-shadow: 0px 0px 0 88px rgba(255, 255, 255, 0.1036);
+		}
+
 		@media screen and (max-width: $tablet) {
 			& {
 				margin-top: 156px;
@@ -425,12 +445,21 @@ h5 {
 				font-size: 20px;
 				letter-spacing: 1.25px;
 			}
+			&:hover {
+				box-shadow: 0px 0px 0 44px rgba(255, 255, 255, 0.1036);
+			}
+		}
+
+		@media screen and (max-width: calc($mobile - 100px)) {
+			& {
+				margin: 20px 0;
+				width: 150px;
+				height: 150px;
+			}
 		}
 	}
 
-	.main__btn:hover {
-		box-shadow: 0px 0px 0 88px rgba(255, 255, 255, 0.1036);
-	}
+	
 
 	@media screen and (max-width: calc($tablet + 300px)) {
 		& {
