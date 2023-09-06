@@ -47,9 +47,9 @@
     line-height: 28px;
   }
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 575px) {
   .main .main__content {
-    max-width: 327px;
+    max-width: 100%;
   }
   .main .main__content .content__text {
     width: 100%;
@@ -93,7 +93,7 @@
     height: 242px;
   }
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 575px) {
   .main .main__btn {
     margin-top: 81px;
     width: 150px;

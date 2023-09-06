@@ -4,7 +4,7 @@ $white: #fff;
 
 $desktop: 1440px;
 $tablet: 768px;
-$mobile: 375px;
+$mobile: 575px;
 
 .container {
 	width: 100%;
@@ -57,7 +57,7 @@ $mobile: 375px;
 		}
 		@media screen and (max-width: $mobile) {
 			& {
-				max-width: 327px;
+				max-width: 100%;
 			}
 			& .content__text {
 				width: 100%;
