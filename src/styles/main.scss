@@ -1,7 +1,7 @@
 @use "reset.scss";
 @use "fonts.scss";
-@use "header.scss";
-@use "homepage.scss";
+@use "./header/header.scss";
+@use "./homepage/homepage.scss";
 
 $black: #0b0d17;
 $lightBlue: #d0d6f9;
