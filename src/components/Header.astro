@@ -1,26 +1,37 @@
+---
+import { type HeaderProps, type NavData } from "./Header.types";
 
- <header class="header">
-      <div class="header__logo">
-        <a href="#">
-          <img src="assets/shared/logo.svg" alt="logo" />
-        </a>
-      </div>
+const nav: NavData[] = [
+	{ name: "Home", href: "/" },
+	{ name: "Destination", href: "/destination" },
+	{ name: "Crew", href: "/crew" },
+	{ name: "Technology", href: "/technology" },
+];
 
-      <nav class="nav">
-        <div class="nav__burger"></div>
-        <ul class="nav__menu nav-text">
-          <li class="nav__item active">
-            <a href="/"><span>00</span> Home</a>
-          </li>
-          <li class="nav__item">
-            <a href="/destination/"><span>01</span> Destination</a>
-          </li>
-          <li class="nav__item">
-            <a href="/crew/"><span>02</span> Crew</a>
-          </li>
-          <li class="nav__item">
-            <a href="/technology/"><span>03</span> Technology</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+const { activeEl } = Astro.props as HeaderProps;
+---
+
+<header class="header">
+	<div class="header__logo">
+		<a href="#">
+			<img src="assets/shared/logo.svg" alt="logo" />
+		</a>
+	</div>
+
+	<nav class="nav">
+		<div class="nav__burger"></div>
+		<ul class="nav__menu nav-text">
+			{
+				nav.map((item, index) => {
+					return (
+						<li class={`nav__item ${activeEl === index ? "active" : ""}`}>
+							<a href={item.href}>
+								<span>0{index + 1}</span> {` ${item.name}`}
+							</a>
+						</li>
+					);
+				})
+			}
+		</ul>
+	</nav>
+</header>

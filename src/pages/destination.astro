@@ -1,0 +1,60 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { destinationData } from "../data/destination";
+---
+
+<Layout
+	title="Space Tourism: Destination"
+	bgImageClass="destination-page"
+	activeNav={1}
+>
+	<main class="destination">
+		<div class="container">
+			<div class="main__content">
+				<p class="sub-h1">
+					<span class="sub-h1__num">01</span> Pick your destination
+				</p>
+
+				<div class="tab__box">
+					{
+						destinationData.map((item, index) => {
+							return (
+								<button
+									class={`tab--btn ${index === 0 ? "active" : ""}`}
+								>
+									{item.name}
+								</button>
+							);
+						})
+					}
+				</div>
+			</div>
+
+			{
+				destinationData.map((item, index) => {
+					const html = (
+						<div class={`tab__content ${index === 0 ? " active" : ""}`}>
+							<div class="planet--preview">
+								<img src={item.image} alt={item.name} />
+							</div>
+							<div class="planet--info">
+								<h2>{item.name}</h2>
+								<p>{item.description}</p>
+								<div class="info__distance">
+									<p>avg. distance</p>
+									<span>{item.distance}</span>
+								</div>
+								<div class="info__travelTime">
+									<p>est. travel time</p>
+									<span>{item.travel}</span>
+								</div>
+							</div>
+						</div>
+					);
+
+					return html;
+				})
+			}
+		</div>
+	</main>
+</Layout>

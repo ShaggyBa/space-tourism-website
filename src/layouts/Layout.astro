@@ -1,12 +1,17 @@
 ---
 import Header from "../components/Header.astro";
 
-
 interface Props {
-	title: string
+	title: string;
+	bgImageClass: string;
+	activeNav: number;
 }
 
-const {title = "Space Tourism"} = Astro.props as Props
+const {
+	title = "Space Tourism",
+	bgImageClass = "home-page",
+	activeNav = 0,
+} = Astro.props as Props;
 ---
 
 <html lang="en">
@@ -14,21 +19,19 @@ const {title = "Space Tourism"} = Astro.props as Props
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/x-icon" href="/public/favicon.ico" />
 		<link rel="stylesheet" href="src/styles/main.css" />
-		
+
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 
 		<title>{title}</title>
 	</head>
-	
-	<body class="home-page">
-   
-	<Header/>
 
-	<slot/>
+	<body class={bgImageClass}>
+		<Header activeEl={activeNav} />
 
-    <footer></footer>
-    <script src="/src/scripts/script.js"></script>
+		<slot />
+
+		<footer></footer>
+		<script src="/src/scripts/script.js"></script>
 	</body>
-
 </html>

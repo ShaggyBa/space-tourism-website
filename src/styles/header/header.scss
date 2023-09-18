@@ -240,6 +240,7 @@ $mobile: 575px;
 	border-bottom: 3px solid $white;
 }
 
-.nav__item:hover {
+.nav__item:not(.nav__item.active):hover {
 	border-bottom: 3px solid rgba(255, 255, 255, 0.5021);
 }
+
