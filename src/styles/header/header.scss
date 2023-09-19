@@ -20,6 +20,13 @@ $mobile: 575px;
 			margin-top: 0;
 		}
 	}
+
+	@media screen and (max-width: $mobile) {
+		& {
+			height: 100%;
+			padding-top: 24px;
+		}
+	}
 }
 
 .header__logo {
@@ -39,6 +46,17 @@ $mobile: 575px;
 		& {
 			margin-left: 15px;
 		}
+	}
+}
+
+@keyframes toggleMenu {
+	from {
+		right: -100%;
+		// transform: translateX(150%);
+	}
+	to {
+		right: 0;
+		// transform: translateX(0);
 	}
 }
 
@@ -106,6 +124,7 @@ $mobile: 575px;
 			height: 100%;
 			z-index: 10;
 
+			animation: toggleMenu 0.3s ease-in-out;
 			.nav__burger {
 				top: 50px;
 				border: none;

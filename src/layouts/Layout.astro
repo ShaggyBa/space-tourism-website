@@ -3,12 +3,17 @@ import Header from "../components/Header.astro";
 
 interface Props {
 	title: string;
+	urlToCSS: cssUrl;
 	bgImageClass: string;
 	activeNav: number;
 }
 
+type cssUrl = "../src/styles/homepage/homepage.css" 
+| "../src/styles/destination/destination.css";
+
 const {
 	title = "Space Tourism",
+	urlToCSS = "../src/styles/homepage/homepage.css",
 	bgImageClass = "home-page",
 	activeNav = 0,
 } = Astro.props as Props;
@@ -19,6 +24,7 @@ const {
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<link rel="stylesheet" href="../src/styles/main.css" />
+		<link rel="stylesheet" href={urlToCSS} />
 
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />

@@ -63,6 +63,11 @@ $mobile: 575px;
 			margin-top: 106px;
 		}
 	}
+	@media screen and (max-width: $mobile) {
+		& {
+			margin-top: 58px;
+		}
+	}
 }
 
 .main__content {

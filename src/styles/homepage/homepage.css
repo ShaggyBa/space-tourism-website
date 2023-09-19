@@ -43,6 +43,11 @@
     margin-top: 106px;
   }
 }
+@media screen and (max-width: 575px) {
+  .main {
+    margin-top: 58px;
+  }
+}
 
 .main__content {
   display: flex;
