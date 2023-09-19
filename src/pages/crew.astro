@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { crewData } from "../data/crew";
+---
+
+<Layout
+	title="Space Tourism: Crew"
+	urlToCSS="../src/styles/crew/crew.css"
+	bgImageClass="crew-page"
+	activeNav={2}
+>
+	<main class="crew">
+		<div class="container">
+			<div class="crew__content">
+				<p class="sub-h1">
+					<span class="sub-h1__num">02</span> Meet your crew
+				</p>
+
+				<div class="tab__box">
+				<button class="tab--btn">1</button>
+				<button class="tab--btn">2</button>
+				<button class="tab--btn">3</button>
+				<button class="tab--btn">4</button>
+
+				</div>
+			</div>
+
+			{
+				crewData.map((item, index) => {
+					const html = (
+						<div  class={`tab__content ${index === 0 ? " active" : ""}`}>
+							<div class="crew--info">
+								<h3>{item.role}</h3>
+								<h2>{item.name}</h2>
+								<p>{item.description}</p>
+							</div>
+								<div class="crew--preview">
+									<img src={item.image} alt={item.name} />
+								</div>
+							</div>
+					);
+
+					return html;
+				})
+			}
+		</div>
+	</main>
+</Layout>
+
+<script src="../scripts/tabs.ts"></script>

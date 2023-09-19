@@ -419,6 +419,7 @@ h5 {
 @media screen and (max-width: 575px) {
   .sub-h1 {
     font-size: 16px;
+    text-align: center;
   }
 }
 
