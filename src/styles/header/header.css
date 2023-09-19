@@ -187,6 +187,7 @@
   padding: 30px 0;
   border-bottom: 3px solid transparent;
   margin-right: 50px;
+  transition: border-bottom 0.3s ease-in-out;
 }
 .nav__item:last-child {
   margin-right: 0;

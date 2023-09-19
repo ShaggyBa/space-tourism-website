@@ -218,6 +218,7 @@ $mobile: 575px;
 	border-bottom: 3px solid transparent;
 	margin-right: 50px;
 
+	transition: border-bottom 0.3s ease-in-out;
 	&:last-child {
 		margin-right: 0;
 	}
@@ -243,4 +244,3 @@ $mobile: 575px;
 .nav__item:not(.nav__item.active):hover {
 	border-bottom: 3px solid rgba(255, 255, 255, 0.5021);
 }
-

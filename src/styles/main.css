@@ -39,17 +39,17 @@ button {
 @font-face {
   font-family: "Barlow";
   font-weight: 400;
-  src: url("/public/fonts/Barlow_Condensed/BarlowCondensed-Regular.ttf") format("truetype");
+  src: url("/fonts/Barlow_Condensed/BarlowCondensed-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "Barlow";
   font-weight: 700;
-  src: url("/public/fonts/Barlow_Condensed/BarlowCondensed-Bold.ttf") format("truetype");
+  src: url("/fonts/Barlow_Condensed/BarlowCondensed-Bold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Bellefair";
   font-weight: 400;
-  src: url("/public/fonts/Bellefair/Bellefair-Regular.ttf") format("truetype");
+  src: url("/fonts/Bellefair/Bellefair-Regular.ttf") format("truetype");
 }
 .header {
   margin-top: 40px;
@@ -240,6 +240,7 @@ button {
   padding: 30px 0;
   border-bottom: 3px solid transparent;
   margin-right: 50px;
+  transition: border-bottom 0.3s ease-in-out;
 }
 .nav__item:last-child {
   margin-right: 0;
@@ -262,17 +263,6 @@ button {
 
 .nav__item:not(.nav__item.active):hover {
   border-bottom: 3px solid rgba(255, 255, 255, 0.5021);
-}
-
-.container {
-  width: 100%;
-  padding: 0 165px;
-  margin: 0 auto;
-}
-@media screen and (max-width: 768px) {
-  .container {
-    padding: 0 97px;
-  }
 }
 
 .main {
@@ -388,10 +378,26 @@ body {
   overflow-x: hidden;
 }
 
+.container {
+  width: 100%;
+  padding: 0 165px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 97px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
 .home-page {
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("/public/assets/home/background-home-desktop.jpg");
+  background-image: url("/assets/home/background-home-desktop.jpg");
 }
 @media screen and (max-width: 1068px) {
   .home-page {
@@ -403,19 +409,19 @@ body {
 }
 @media screen and (max-width: 968px) {
   .home-page {
-    background-image: url("/public/assets/home/background-home-tablet.jpg");
+    background-image: url("/assets/home/background-home-tablet.jpg");
   }
 }
 @media screen and (max-width: 575px) {
   .home-page {
-    background-image: url("/public/assets/home/background-home-mobile.jpg");
+    background-image: url("/assets/home/background-home-mobile.jpg");
   }
 }
 
 .destination-page {
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("/public/assets/destination/background-destination-desktop.jpg");
+  background-image: url("/assets/destination/background-destination-desktop.jpg");
 }
 @media screen and (max-width: 1068px) {
   .destination-page {
@@ -427,12 +433,12 @@ body {
 }
 @media screen and (max-width: 968px) {
   .destination-page {
-    background-image: url("/public/assets/destination/background-destination-tablet.jpg");
+    background-image: url("/assets/destination/background-destination-tablet.jpg");
   }
 }
 @media screen and (max-width: 575px) {
   .destination-page {
-    background-image: url("/public/assets/destination/background-destination-mobile.jpg");
+    background-image: url("/assets/destination/background-destination-mobile.jpg");
   }
 }
 
@@ -589,7 +595,7 @@ h5 {
   line-height: 32px;
   font-size: 18px;
   padding-bottom: 54px;
-  border-bottom: 1px solid #383B4B;
+  border-bottom: 1px solid #383b4b;
 }
 @media screen and (max-width: 1068px) {
   .planet--info {

@@ -20,43 +20,56 @@ body {
 	overflow-x: hidden;
 }
 
-@mixin backgroundMixin {
-	background-size: cover;
-   background-repeat: no-repeat;
+.container {
+	width: 100%;
+	padding: 0 165px;
+	margin: 0 auto;
 
-   @media screen and (max-width: calc($tablet + 300px)) {
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: top;
-
-      overflow-y: visible;
-   }
-}
-
-
-.home-page {
-	@include backgroundMixin;
-	background-image: url("/public/assets/home/background-home-desktop.jpg");
-
-	@media screen and (max-width: calc($tablet + 200px)) {
-		background-image: url("/public/assets/home/background-home-tablet.jpg");
+	@media screen and (max-width: $tablet) {
+		padding: 0 97px;
 	}
 
 	@media screen and (max-width: $mobile) {
-		background-image: url("/public/assets/home/background-home-mobile.jpg");
+		padding: 0 15px;
+	}
+}
+
+@mixin backgroundMixin {
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	@media screen and (max-width: calc($tablet + 300px)) {
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: top;
+
+		overflow-y: visible;
+	}
+}
+
+.home-page {
+	@include backgroundMixin;
+	background-image: url("/assets/home/background-home-desktop.jpg");
+
+	@media screen and (max-width: calc($tablet + 200px)) {
+		background-image: url("/assets/home/background-home-tablet.jpg");
+	}
+
+	@media screen and (max-width: $mobile) {
+		background-image: url("/assets/home/background-home-mobile.jpg");
 	}
 }
 
 .destination-page {
 	@include backgroundMixin;
-	background-image: url("/public/assets/destination/background-destination-desktop.jpg");
+	background-image: url("/assets/destination/background-destination-desktop.jpg");
 
 	@media screen and (max-width: calc($tablet + 200px)) {
-		background-image: url("/public/assets/destination/background-destination-tablet.jpg");
+		background-image: url("/assets/destination/background-destination-tablet.jpg");
 	}
 
 	@media screen and (max-width: $mobile) {
-		background-image: url("/public/assets/destination/background-destination-mobile.jpg");
+		background-image: url("/assets/destination/background-destination-mobile.jpg");
 	}
 }
 
@@ -133,7 +146,6 @@ h5 {
 		& {
 			margin-right: 0;
 		}
-		
 	}
 }
 .tab--btn {
@@ -175,7 +187,6 @@ h5 {
 			align-items: center;
 			justify-content: center;
 		}
-		
 	}
 }
 
@@ -192,7 +203,6 @@ h5 {
 	from {
 		opacity: 0;
 		transform: translateY(150%);
-
 	}
 	to {
 		opacity: 1;
@@ -202,9 +212,9 @@ h5 {
 
 .planet--preview {
 	height: auto;
-	
+
 	max-width: 678px;
-	animation: emergency .7s ease-in-out;
+	animation: emergency 0.7s ease-in-out;
 	& img {
 		margin: 0 auto;
 	}
@@ -213,8 +223,7 @@ h5 {
 .planet--info {
 	margin: 37px 0 0 20px;
 	max-width: 445px;
-	animation: moving .5s ease-in-out;
-
+	animation: moving 0.5s ease-in-out;
 
 	& p {
 		color: $lightBlue;
@@ -223,7 +232,7 @@ h5 {
 		line-height: 32px;
 		font-size: 18px;
 		padding-bottom: 54px;
-		border-bottom: 1px solid #383B4B;
+		border-bottom: 1px solid #383b4b;
 	}
 
 	@media screen and (max-width: calc($tablet + 300px)) {
@@ -236,7 +245,6 @@ h5 {
 			flex-wrap: wrap;
 			text-align: center;
 		}
-		
 	}
 }
 
