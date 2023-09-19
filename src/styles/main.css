@@ -345,28 +345,6 @@ button {
     line-height: 28px;
   }
 }
-@media screen and (max-width: 575px) {
-  .main__content {
-    max-width: 100%;
-  }
-  .main__content .content__text {
-    width: 100%;
-  }
-  .main__content .content__text h5 {
-    font-size: 16px;
-    line-height: normal;
-    letter-spacing: 2.7px;
-  }
-  .main__content .content__text h1 {
-    margin-top: 17px;
-    font-size: 100px;
-  }
-  .main__content .content__text p {
-    font-size: 15px;
-    line-height: 25px;
-    margin-top: 17px;
-  }
-}
 
 body {
   font-family: Barlow, sans-serif;
@@ -390,7 +368,7 @@ body {
 }
 @media screen and (max-width: 575px) {
   .container {
-    padding: 0 15px;
+    padding: 0 24px;
   }
 }
 
@@ -479,6 +457,23 @@ h5 {
   color: #d0d6f9;
 }
 
+@media screen and (max-width: 575px) {
+  h5 {
+    font-size: 16px;
+    line-height: normal;
+    letter-spacing: 2.7px;
+  }
+  h1 {
+    margin-top: 17px;
+    font-size: 100px;
+  }
+  h2 {
+    font-size: 56px;
+  }
+  p {
+    font-size: 15px;
+  }
+}
 .sub-h1 {
   font-size: 28px;
   color: #fff;
@@ -575,12 +570,17 @@ h5 {
   }
 }
 .planet--preview {
-  height: auto;
   max-width: 678px;
   animation: emergency 0.7s ease-in-out;
 }
 .planet--preview img {
+  max-width: 100%;
   margin: 0 auto;
+}
+@media screen and (max-width: 1068px) {
+  .planet--preview {
+    margin-top: 30px;
+  }
 }
 
 .planet--info {
@@ -606,6 +606,7 @@ h5 {
     justify-content: center;
     flex-wrap: wrap;
     text-align: center;
+    padding-bottom: 30px;
   }
 }
 
@@ -621,7 +622,19 @@ h5 {
   font-family: "Bellefair";
   font-size: 28px;
 }
+@media screen and (max-width: 575px) {
+  .info__distance,
+  .info__travelTime {
+    display: block;
+    width: 100%;
+  }
+}
 
 .info__distance {
   margin-right: 79px;
+}
+@media screen and (max-width: 575px) {
+  .info__distance {
+    margin-right: 0;
+  }
 }
